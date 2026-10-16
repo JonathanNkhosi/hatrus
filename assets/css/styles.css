@@ -360,7 +360,7 @@ nav{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(247,244,23
 @media(max-width:860px){
 .hero .w.hc{position:relative;z-index:2;padding:0;background:none;border:0;border-radius:0;box-shadow:none}
 .hero p{display:none!important}
-.hero h1{margin:0 0 20px;line-height:.96}
+.hero h1{margin:0 0 clamp(38px,10vw,52px);line-height:.96}
 .hero .row{gap:12px}
 .hero .orb img{object-position:78% 42%;scale:1.12;filter:brightness(.62)}
 .hero h1{color:#fff;text-shadow:0 2px 12px rgba(3,26,51,.35)}
