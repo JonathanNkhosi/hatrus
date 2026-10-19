@@ -389,3 +389,5 @@ h1,h2,h3{text-transform:capitalize}
 .careers-status{border-left:3px solid var(--cyan);padding:10px 0 10px clamp(22px,4vw,42px)}
 .careers-status h2{margin:20px 0;font-size:clamp(2rem,3.6vw,3.1rem);line-height:1.12}
 @media(max-width:860px){.careers-layout{gap:42px}.careers-copy h1{font-size:clamp(2.5rem,8vw,3.7rem)}.careers-status{padding-left:22px}}
+nav ul .mobile-quote{display:none}
+@media(max-width:860px){nav ul .mobile-quote{display:block;margin-top:4px;padding-top:10px;border-top:1px solid rgba(6,48,90,.14)}nav ul .mobile-quote a.btn{display:flex;justify-content:center;width:100%;padding:13px 18px;border-radius:99px;background:var(--cyan);color:#fff;box-shadow:none}}
