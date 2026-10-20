@@ -389,6 +389,9 @@ h1,h2,h3{font-family:'Orbitron',sans-serif;letter-spacing:0;line-height:1.08}
 @media(max-width:860px){.hero .orb:after{background:linear-gradient(0deg,rgba(3,26,51,.96) 0%,rgba(3,26,51,.82) 38%,rgba(3,26,51,.2) 76%,rgba(3,26,51,.32) 100%)!important}}
 h1,h2,h3{text-transform:capitalize}
 .hero h1{text-transform:capitalize}
+/* Keep the hero photo proportional and avoid the progressive zoom crop. */
+.hero .orb img{width:100%;height:100%;object-fit:cover;object-position:58% 50%;scale:1;animation:none}
+@media(max-width:860px){.hero .orb img{object-position:66% 50%;scale:1;animation:none}}
 .pg h1{font-size:clamp(2.35rem,4.5vw,4rem);line-height:1.12;max-width:12em}
 .careers-layout{align-items:start}
 .careers-copy h1{max-width:11em;margin:20px 0;font-size:clamp(2.7rem,5.4vw,4.4rem);line-height:1.08}
