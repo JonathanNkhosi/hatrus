@@ -401,3 +401,9 @@ h1,h2,h3{text-transform:capitalize}
 @media(max-width:860px){.careers-layout{gap:42px}.careers-copy h1{font-size:clamp(2.5rem,8vw,3.7rem)}.careers-status{padding-left:22px}}
 nav ul .mobile-quote{display:none}
 @media(max-width:860px){nav ul .mobile-quote{display:block;margin-top:4px;padding-top:10px;border-top:1px solid rgba(6,48,90,.14)}nav ul .mobile-quote a.btn{display:flex;justify-content:center;width:100%;padding:13px 18px;border-radius:99px;background:var(--cyan);color:#fff;box-shadow:none}}
+
+/* Stronger mobile hero shade behind the headline and calls to action. */
+@media(max-width:860px){
+.hero .orb:after{background:linear-gradient(0deg,rgba(3,26,51,.99) 0%,rgba(3,26,51,.94) 48%,rgba(3,26,51,.72) 67%,rgba(3,26,51,.38) 86%,rgba(3,26,51,.28) 100%)!important}
+.hero h1{text-shadow:0 2px 18px rgba(3,26,51,.8)}
+}
