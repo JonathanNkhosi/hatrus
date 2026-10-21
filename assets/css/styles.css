@@ -404,6 +404,7 @@ nav ul .mobile-quote{display:none}
 
 /* Stronger mobile hero shade behind the headline and calls to action. */
 @media(max-width:860px){
-.hero .orb:after{background:linear-gradient(0deg,rgba(3,26,51,.99) 0%,rgba(3,26,51,.94) 48%,rgba(3,26,51,.72) 67%,rgba(3,26,51,.38) 86%,rgba(3,26,51,.28) 100%)!important}
+.hero .orb:after{background:linear-gradient(0deg,rgba(3,26,51,.84) 0%,rgba(3,26,51,.82) 42%,rgba(3,26,51,.62) 62%,rgba(3,26,51,.48) 82%,rgba(3,26,51,.68) 100%)!important}
+.hero .tag{text-shadow:0 2px 8px rgba(3,26,51,.9),0 0 3px rgba(3,26,51,.75)}
 .hero h1{text-shadow:0 2px 18px rgba(3,26,51,.8)}
 }
