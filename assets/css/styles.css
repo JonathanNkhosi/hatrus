@@ -402,6 +402,10 @@ h1,h2,h3{text-transform:capitalize}
 nav ul .mobile-quote{display:none}
 @media(max-width:860px){nav ul .mobile-quote{display:block;margin-top:4px;padding-top:10px;border-top:1px solid rgba(6,48,90,.14)}nav ul .mobile-quote a.btn{display:flex;justify-content:center;width:100%;padding:13px 18px;border-radius:99px;background:var(--cyan);color:#fff;box-shadow:none}}
 
+/* Gentle, continuous hero photo movement on all screen sizes. */
+@keyframes heroSlowZoom{from{transform:scale(1)}to{transform:scale(1.06)}}
+.hero .orb img{animation:heroSlowZoom 32s ease-in-out infinite alternate}
+
 /* Stronger mobile hero shade behind the headline and calls to action. */
 @media(max-width:860px){
 .hero .orb:after{background:linear-gradient(0deg,rgba(3,26,51,.84) 0%,rgba(3,26,51,.82) 42%,rgba(3,26,51,.62) 62%,rgba(3,26,51,.48) 82%,rgba(3,26,51,.68) 100%)!important}
