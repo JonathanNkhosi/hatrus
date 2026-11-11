@@ -415,4 +415,4 @@ nav ul .mobile-quote{display:none}
 .hero .orb:after{background:linear-gradient(90deg,rgba(3,26,51,.88) 0%,rgba(3,26,51,.86) 38%,rgba(3,26,51,.68) 58%,rgba(3,26,51,.4) 82%,rgba(3,26,51,.44) 100%)!important}
 .hero .orb img{opacity:1;filter:none!important}
 .hero .tag,.hero h1,.hero p{text-shadow:0 2px 10px rgba(3,26,51,.8)}
-@media(max-width:860px){.hero .orb:after{background:rgba(3,26,51,.72)!important}}
+@media(max-width:860px){.hero .orb:after{background:rgba(3,26,51,.82)!important}}
