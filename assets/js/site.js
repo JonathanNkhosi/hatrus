@@ -72,7 +72,30 @@ if(form){
 const select=form.querySelector("select[name=s]");
 select.innerHTML=`<option value="" selected disabled>Select a service</option>${S2.map(x=>`<option value="${x[0]}">${x[0]}</option>`).join("")}<option value="Other">Other</option>`;
 const requested=new URLSearchParams(location.search).get("service");if(requested&&[...select.options].some(o=>o.value===requested))select.value=requested;
-form.onsubmit=e=>{e.preventDefault();const d=new FormData(form);openLink("mailto:info@hatrus.com?subject="+encodeURIComponent("Enquiry: "+d.get("s"))+"&body="+encodeURIComponent(`Name: ${d.get("n")}\nEmail: ${d.get("e")}\nPhone: ${d.get("p")}\n\n${d.get("m")}`));$("#ok").textContent="Thanks. Your email app is opening with your enquiry. You can also call +260 762 388540."};
+form.onsubmit=async e=>{
+e.preventDefault();
+const submit=form.querySelector('button[type="submit"]');
+const status=$("#ok");
+const d=new FormData(form);
+submit.disabled=true;
+submit.setAttribute("aria-busy","true");
+status.textContent="Sending your enquiry…";
+try{
+const response=await fetch("https://formsubmit.co/ajax/info@hatrus.com",{
+method:"POST",
+headers:{"Content-Type":"application/json",Accept:"application/json"},
+body:JSON.stringify({name:d.get("n"),email:d.get("e"),phone:d.get("p"),service:d.get("s"),message:d.get("m"),_subject:`Website enquiry: ${d.get("s")}`})
+});
+const result=await response.json();
+if(!response.ok||result.success!=="true")throw new Error("Submission failed");
+location.assign("message-received.html");
+}catch(error){
+status.textContent="We couldn’t send your enquiry. Please try again or email info@hatrus.com.";
+}finally{
+submit.disabled=false;
+submit.removeAttribute("aria-busy");
+}
+};
 }
 function openLink(h){let w=null;try{w=window.open(h,"_blank")}catch(e){}if(w){setTimeout(()=>{try{w.close()}catch(e){}},600);return}try{window.top.location.href=h}catch(e){location.href=h}}
 document.addEventListener("click",e=>{const a=e.target.closest('a[href^="tel:"],a[href^="mailto:"]');if(!a)return;e.preventDefault();openLink(a.getAttribute("href"))});
